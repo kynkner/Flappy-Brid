@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Ground {
     private BufferedImage groudImage;
-    private int x1, y1, x2, y2;
+    private  float x1, y1, x2, y2;
     public Ground(){
         try {
             groudImage = ImageIO.read(new File("Assest/ground.png"));
@@ -23,11 +23,17 @@ public class Ground {
         if (x2 < 0) x1 = x2 + 830;
         if (x1 < 0) x2 = x1 + 830;
     }
-    public void Paint(Graphics2D g2){
-        g2.drawImage(groudImage, x1, y1, null);
-        g2.drawImage(groudImage, x2, y2, null);
+    public void Update2(){
+        x1 -= 0.4f;
+        x2 -= 0.4f;
+        if (x2 < 0) x1 = x2 + 830;
+        if (x1 < 0) x2 = x1 + 830;
     }
-    public  int getYGround(){
+    public void Paint(Graphics2D g2){
+        g2.drawImage(groudImage, (int) x1, (int) y1, null);
+        g2.drawImage(groudImage, (int) x2, (int) y2, null);
+    }
+    public  float getYGround(){
         return y1;
     }
 }

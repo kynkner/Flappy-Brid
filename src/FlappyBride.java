@@ -44,6 +44,7 @@ public class FlappyBride extends GameScreen {
 
         ground = new Ground();
 
+
         chimneyList = new ChimneyList();
         BeginGame();
 
@@ -72,10 +73,12 @@ public class FlappyBride extends GameScreen {
 
             chimneyList.update();
 
+
             for (int i = 0; i < ChimneyList.Size; i++) {
                 if (bird.getRectangle().intersects(chimneyList.getChimney(i).getRectangle())){
                     if (bird.getIslive()) bird.bupSound.play();
                     bird.setIslive(false);
+                    CurrentScreen = GAMEOVER_SCREEN;
                 }
             }
 
@@ -86,19 +89,51 @@ public class FlappyBride extends GameScreen {
                     chimneyList.getChimney(i).setBehindBird(true);
                 }
             }
-
-            if (bird.getPosY() + bird.getH() > ground.getYGround()) CurrentScreen = GAMEOVER_SCREEN;
-        }else {
-
+           updateleve();
+            if (bird.getPosY() + bird.getH() > ground.getYGround()) {
+                bird.bupSound.play();
+                CurrentScreen = GAMEOVER_SCREEN;
+            }
         }
+    }
+
+    private void updateleve() {
+        if (Point > 1){
+            ground.Update2();
+            chimneyList.update2();
+        }
+        if (Point > 4){
+            ground.Update2();
+            chimneyList.update2();
+        }
+        if (Point > 8){
+            ground.Update2();
+            chimneyList.update2();
+        }
+        if (Point > 13){
+            ground.Update2();
+            chimneyList.update2();
+        }
+        if (Point > 18){
+            ground.Update2();
+            chimneyList.update2();
+        }
+        if (Point > 24){
+            ground.Update2();
+            chimneyList.update2();
+        }
+
     }
 
     @Override
     public void GAME_PAINT(Graphics2D g2) {
+        Font font = new Font("Arial", Font.BOLD, 20);
+        g2.setFont(font);
         g2.setColor(Color.decode("#b8daef"));
         g2.fillRect(0,0,MASTER_WIDTH,MASTER_HEIGHT);
         chimneyList.paint(g2);
         ground.Paint(g2);
+
 
         if (bird.getIsFlying())
         bird_anim.PaintAnims((int) bird.getPosX(), (int) bird.getPosY(), birds, g2, 0, -1);
@@ -107,14 +142,19 @@ public class FlappyBride extends GameScreen {
 
         if (CurrentScreen == BEGIN_SCREEN){
             g2.setColor(Color.white);
-            g2.drawString("Press space to play game", 200, 300);
+            g2.drawString("Press space to play game", 100, 290);
         }
         if (CurrentScreen == GAMEOVER_SCREEN){
             g2.setColor(Color.white);
-            g2.drawString("Press space turn back begin screen", 200, 300);
+            g2.drawString("GAME OVER", 350, 280);
+            g2.drawString("Best: " + Point, 380, 310);
+            g2.drawString("Press space turn back begin screen", 250, 340);
         }
         g2.setColor(Color.white);
         g2.drawString("Point: " + Point, 20, 50);
+
+
+
 
 
     }
@@ -126,7 +166,7 @@ public class FlappyBride extends GameScreen {
             if (CurrentScreen == BEGIN_SCREEN){
                 CurrentScreen = GAMEPLAY_SCREEN;
             }else if (CurrentScreen == GAMEPLAY_SCREEN){
-            if (bird.getIslive())bird.fly();
+             bird.fly();
             }else if (CurrentScreen == GAMEOVER_SCREEN){
                 CurrentScreen = BEGIN_SCREEN;
             }

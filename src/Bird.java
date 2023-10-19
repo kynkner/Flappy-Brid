@@ -14,9 +14,9 @@ public class Bird extends Objects {
         super(x, y, w, h);
         rectangle = new Rectangle(x, y ,w, h);
 
-        flapSound = new SoundPlayer(new File("Assest/fap.wav"));
-        bupSound = new SoundPlayer(new File("Assest/amthanh.waw.wav"));
-        getMoneySound = new SoundPlayer(new File("Assest/getpoint.wav"));
+        flapSound = new SoundPlayer(new File("Assest/sound/fap.wav"));
+        bupSound = new SoundPlayer(new File("Assest//sound/preview_4.wav"));
+        getMoneySound = new SoundPlayer(new File("Assest/sound/getpoint.wav"));
 
     }
 

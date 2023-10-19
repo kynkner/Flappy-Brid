@@ -11,8 +11,8 @@ public class ChimneyList {
     private  QueueList<Chimney> chimneyQueueList;
     private BufferedImage chimneyImage, chimneyImage2;
     public static int Size = 6;
-    private int topChimneyY = -350;
-    private int bottomChimneyY = 200;
+    private final int topChimneyY = -350;
+    private final int bottomChimneyY = 200;
 
     public Chimney getChimney(int i) {
         return chimneyQueueList.get(i);
@@ -61,28 +61,37 @@ public class ChimneyList {
             chimneyQueueList.push(cn);
         }
     }
+    public  void update2(){
+        for (int i = 0; i< Size; i++) {
+            chimneyQueueList.get(i).update2();
+        }
+        queue();
+    }
     public void update(){
         for (int i = 0; i< Size; i++) {
             chimneyQueueList.get(i).update();
         }
-            if (chimneyQueueList.get(0).getPosX() < -74) {
-                int deltaY = getRandomY();
-                Chimney cn;
-                cn = chimneyQueueList.pop();
-                cn.setPosX(chimneyQueueList.get(4).getPosX()+ 300);
-                cn.setPosY(bottomChimneyY + deltaY);
-                cn.setBehindBird(false);
-                chimneyQueueList.push(cn);
+           queue();
+    }
+    public void queue(){
+        if (chimneyQueueList.get(0).getPosX() < -74) {
+            int deltaY = getRandomY();
+            Chimney cn;
+            cn = chimneyQueueList.pop();
+            cn.setPosX(chimneyQueueList.get(4).getPosX()+ 300);
+            cn.setPosY(bottomChimneyY + deltaY);
+            cn.setBehindBird(false);
+            chimneyQueueList.push(cn);
 
-                cn = chimneyQueueList.pop();
-                cn.setPosX(chimneyQueueList.get(4).getPosX());
-                cn.setPosY(topChimneyY + deltaY);
-                cn.setBehindBird(false);
-                chimneyQueueList.push(cn);
+            cn = chimneyQueueList.pop();
+            cn.setPosX(chimneyQueueList.get(4).getPosX());
+            cn.setPosY(topChimneyY + deltaY);
+            cn.setBehindBird(false);
+            chimneyQueueList.push(cn);
         }
     }
     public void paint(Graphics2D g2){
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < Size; i++) {
             if (i % 2 == 0) {
                 g2.drawImage(chimneyImage, (int) chimneyQueueList.get(i).getPosX(), (int) chimneyQueueList.get(i).getPosY(), null);
             }else {

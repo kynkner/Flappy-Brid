@@ -12,9 +12,9 @@ import javax.swing.JPanel;
 
 public class GameThread extends JPanel implements Runnable{
     
-    private GameScreen context;
+    private final GameScreen context;
     
-    private Thread thread;
+    private final Thread thread;
     
     private Graphics ThisGraphics;
     
@@ -22,7 +22,7 @@ public class GameThread extends JPanel implements Runnable{
     
     private BufferedImage buffImage;
     
-    private int MasterWidth, MasterHeight;
+    private final int MasterWidth, MasterHeight;
     public static float scaleX_ = 1, scaleY_ = 1;
     
     public GameThread(GameScreen context){
@@ -78,7 +78,7 @@ public class GameThread extends JPanel implements Runnable{
                 buffImage = new BufferedImage(MasterWidth, MasterHeight, BufferedImage.TYPE_INT_ARGB);
                 if(buffImage == null) return;
                 Graphics2D g2 = (Graphics2D) buffImage.getGraphics();
-                
+
                 if(g2!=null){
                     context.GAME_PAINT(g2);
                 }
