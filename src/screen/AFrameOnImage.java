@@ -1,5 +1,5 @@
 
-package pkg2dgamesframework;
+package screen;
 
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;

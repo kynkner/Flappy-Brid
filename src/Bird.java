@@ -1,5 +1,5 @@
-import pkg2dgamesframework.Objects;
-import pkg2dgamesframework.SoundPlayer;
+import extendss.Objects;
+import sound.SoundPlayer;
 
 import java.awt.*;
 import java.io.File;

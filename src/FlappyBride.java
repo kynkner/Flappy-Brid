@@ -1,6 +1,6 @@
-import pkg2dgamesframework.AFrameOnImage;
-import pkg2dgamesframework.Animation;
-import pkg2dgamesframework.GameScreen;
+import screen.AFrameOnImage;
+import screen.Animation;
+import screen.GameScreen;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

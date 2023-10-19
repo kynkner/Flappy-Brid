@@ -1,5 +1,7 @@
 
-package pkg2dgamesframework;
+package screen;
+
+import screen.GameScreen;
 
 import java.awt.Color;
 import java.awt.Graphics;

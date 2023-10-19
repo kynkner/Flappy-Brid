@@ -1,4 +1,4 @@
-import pkg2dgamesframework.QueueList;
+import extendss.QueueList;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

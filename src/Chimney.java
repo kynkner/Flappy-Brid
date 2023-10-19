@@ -1,4 +1,4 @@
-import pkg2dgamesframework.Objects;
+import extendss.Objects;
 
 import java.awt.*;
 

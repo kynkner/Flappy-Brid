@@ -1,5 +1,5 @@
 
-package pkg2dgamesframework;
+package extendss;
 
 
 public class QueueList <T> {

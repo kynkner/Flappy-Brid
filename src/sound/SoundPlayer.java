@@ -1,5 +1,4 @@
-
-package pkg2dgamesframework;
+package sound;
 
 import java.io.File;
 import javax.sound.sampled.AudioFormat;
