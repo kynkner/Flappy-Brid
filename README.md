@@ -17,9 +17,10 @@
 - Tạo ra game Flappy Bird
 - Hiểu hơn về java-core 
 ## 5. công việc cần làm để phát triển trong tương lai
-Môt số tiêu chí chưa đạt được:
-- Tạo Menu game gồm mục: Đăng nhập, Người chơi mới, lịch sử điêm, hưỡng dẫn
-- Chưa lưu giữ liệu khi thoát game
-- Chưa tăng thêm độ thú vị của game ví dụ như khi đến 1 cấp độ ống di chuyển lên xuống
+Một số tiêu chí chưa đạt được:
+- Tạo Menu game gồm: Đăng nhập, Người chơi mới, lịch sử điểm, hướng dẫn
+- Chưa lưu dữ liệu khi thoát game
+- Chưa tăng thêm độ thú vị của game ví dụ như khi đến 1 cấp độ ống di chuyển lên xuống 
+
 Trong tương lai, hệ thống sẽ tiếp tục cải thiện và phát triển để hoàn thiện hơn.
 
