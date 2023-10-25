@@ -14,9 +14,8 @@
 - sequence diagram:
 ![](./diagram/sequence%20diagram.drawio.png)
 ## 4. kết quả của đồ án
--Tạo ra game Flappy Bird
-
--Hiểu hơn về java-core 
+- Tạo ra game Flappy Bird
+- Hiểu hơn về java-core 
 ## 5. công việc cần làm để phát triển trong tương lai
 Môt số tiêu chí chưa đạt được:
 - Tạo Menu game gồm mục: Đăng nhập, Người chơi mới, lịch sử điêm, hưỡng dẫn
