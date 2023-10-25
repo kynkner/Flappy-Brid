@@ -53,6 +53,7 @@ public class FlappyBride extends GameScreen {
         bird.setPos(350, 250);
         bird.setVt(0);
         bird.setIslive(true);
+
         Point = 0;
         chimneyList.resetChimney();
     }
@@ -152,9 +153,6 @@ public class FlappyBride extends GameScreen {
         }
         g2.setColor(Color.white);
         g2.drawString("Point: " + Point, 20, 50);
-
-
-
 
 
     }
